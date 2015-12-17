@@ -1,0 +1,222 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Mon CV</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.min.js"></script>  
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script>
+    
+    <script type="text/javascript">
+    $(function () {
+        
+        var filterList = {
+        
+            init: function () {
+            
+                // MixItUp plugin
+                // http://mixitup.io
+                $('#portfoliolist').mixitup({
+                    targetSelector: '.portfolio',
+                    filterSelector: '.filter',
+                    effects: ['fade'],
+                    easing: 'snap',
+                    // call the hover effect
+                    onMixEnd: filterList.hoverEffect()
+                });             
+            
+            },
+            
+            hoverEffect: function () {
+            
+                // Simple parallax effect
+                $('#portfoliolist .portfolio').hover(
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+                        $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');             
+                    },
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+                        $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');                               
+                    }       
+                );              
+            
+            }
+
+        };
+        
+        // Run the show!
+        filterList.init();
+        
+        
+    }); 
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="row">
+            <div class="image col-xs-2">
+                <img src="images/image3.png">
+            </div>
+            <div class="entete col-xs-10">
+                <h1>PUYET BORIS</h1>
+                <h2 id="titre">Responsable Webmarketing</h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="row">
+            <div class="col-xs-4">
+                <div class="container-fluid">
+                    <ul><h3>Parcours avant Simplonline :</h3>
+                    <p>Jeune Auto-entrepreneur, Autodidacte Indépendant en WebMarketing, CopyWritting, Community et SEO ainsi que Création et Optimisation Web axée Économie Verte et Sociale, Collaborative et Participative, Citoyenne. Domaine de Compétences très large.</p>
+                </div>
+                </ul>
+            </div>
+            
+            <div class="col-xs-4">
+                <div class="container-fluid">
+                    <ul><h3>Mes ambitions :</h3>
+                    <p>Devenir WebMarketeur : ACCÉLÉRATEUR, FACILITATEUR ET OPTIMISATEUR DE PROJETS, D'INITIATIVES ET D'ALTERNATIVES.</p>
+                </ul>
+                </div>
+            </div>
+            <div class="col-xs-4">
+                <div class="container-fluid">
+                    <ul><h3>Expérience professionnelle :</h3>
+                    <li>BAC STG "Option Gestion et Comptabilité" > Gestion Financière - Diplôme obtenu avec Mention.</li>
+                    <li>Formation Autodidacte en WebMarketing ( Création et Optimisation ) - Apprentissage et Invention de Stratégies WebMarketing.
+Mise en place de Plans d'Action. Création de A à Z et mise en ligne de Sites Internet. Monétisation. Optimisation des Résultats.
+Innovation et Evolution. Accompagnement et Suivi.</li>
+                    <li>Auto-Entrepreneur (Agence des Publicités / WebMarketing) - Entreprise Personnelle</li>
+                </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container-fluid">
+
+            <h2>Mes Réalisations & Exercices :</h2>
+
+            <ul id="filters" class="clearfix row">
+                <li><span class="filter active" data-filter="cat1 cat2 cat3 cat4 cat5 cat6 cat7">Toutes mes catégories</span></li>
+                <li><span class="filter" data-filter="cat1">HTML/CSS</span></li>
+                <li><span class="filter" data-filter="cat2">Javascript</span></li>
+                <li><span class="filter" data-filter="cat3">Bootstrap</span></li>
+                <li><span class="filter" data-filter="cat4">Ruby</span></li>
+                <li><span class="filter" data-filter="cat5">Wordpress</span></li>
+                <li><span class="filter" data-filter="cat6">Pages Facebook</span></li>
+                <li><span class="filter" data-filter="cat7">Plateformes & Exercices</span></li>
+            </ul>
+
+            <div id="portfoliolist">
+                
+                <div class="portfolio cat1" data-cat="cat1">
+                    <div class="portfolio-wrapper">             
+                        <img src="images/portfolios/1.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">HTML5 / CSS3</a>
+                                <span class="text-category">HTML5 & CSS3</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio cat4" data-cat="cat4">
+                    <div class="portfolio-wrapper">             
+                        <img src="images/portfolios/7.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">RUBY</a>
+                                <span class="text-category">RUBY</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio cat3" data-cat="cat3">
+                    <div class="portfolio-wrapper">         
+                        <img src="images/portfolios/3.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Bootstrap</a>
+                                <span class="text-category">Bootstrap</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio cat5" data-cat="cat5">
+                    <div class="portfolio-wrapper">             
+                        <img src="images/portfolios/4.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Skeud Dealers</a>
+                                <span class="text-category">Wordpress</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio cat5" data-cat="cat5">
+                    <div class="portfolio-wrapper">             
+                        <img src="images/portfolios/5.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">RWMF</a>
+                                <span class="text-category">Wordpress</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="portfolio cat6" data-cat="cat6">
+                    <div class="portfolio-wrapper">             
+                        <img src="images/portfolios/6.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">FB Skeud Dealers</a>
+                                <span class="text-category">Page FB</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio cat7" data-cat="cat7">
+                    <div class="portfolio-wrapper">         
+                        <img src="images/portfolios/2.jpg" alt="" />
+                        <div class="label">
+                            <div class="label-text">
+                                <a class="text-title">Simplon</a>
+                                <span class="text-category">Profil Simplon</span>
+                            </div>
+                            <div class="label-bg"></div>
+                        </div>
+                    </div>
+                </div>
+        
+        </div><!-- container -->
+
+    </main>
+    
+    <footer>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.927073597476!2d5.229862315693997!3d49.410284779345425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47eaf7587b9a6a3b%3A0x1e1e3d02a5441937!2s4+Rue+Montant+%C3%80+la+Sass%C3%A9e%2C+55110+Lion-Devant-Dun!5e0!3m2!1sfr!2sfr!4v1450081885976" width="50%" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <center><p><h4>Mes coordonnées : 0684661158 / boris.puyet@nordnet.fr</h4></p></center>
+    </footer>
+
+</body>
+</html>

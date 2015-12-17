@@ -1,0 +1,123 @@
+
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>CV Boris PUYET</title>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.easing.min.js"></script> <!--lien vers le fichier jquery pour l'effet "hover"-->
+    <script type="text/javascript" src="js/jquery.mixitup.min.js"></script> <!--lien vers fichier JQuery pour l'effet filtre-->
+    <link rel="stylesheet" href="css/bootstrap.css" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+    
+    <script type="text/javascript">
+    $(function () {
+        
+        var filterList = {
+        
+            init: function () {
+            
+                // Plugin Mixitup, qui permet de filtrer les vignettes par catégorie
+                $('#portfoliolist').mixitup({
+                    targetSelector: '.portfolio',
+                    filterSelector: '.filter',
+                    effects: ['fade'],
+                    easing: 'snap',
+                    // call the hover effect
+                    onMixEnd: filterList.hoverEffect()
+                });             
+            
+            },
+            
+            hoverEffect: function () {
+            
+                // Fonction pour l'effet "hover"
+                $('#portfoliolist .portfolio').hover(
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: 0}, 200, 'easeOutQuad');
+                        $(this).find('img').stop().animate({top: -30}, 500, 'easeOutQuad');             
+                    },
+                    function () {
+                        $(this).find('.label').stop().animate({bottom: -40}, 200, 'easeInQuad');
+                        $(this).find('img').stop().animate({top: 0}, 300, 'easeOutQuad');                               
+                    }       
+                );              
+            
+            }
+        };
+        
+        // Lance les deux fonctions "hover" et "filtre"
+        filterList.init();
+        
+        
+    }); 
+    </script>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="image">
+                <img src="images/image3.png">
+            </div>
+            <div class="entete">
+                <h1>PUYET Boris</h1>
+                <div class="container">
+                <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+          <ul class="nav navbar-nav">
+            <li class="active"> <a href="#">Accueil</a> </li>
+            <li> <a href="#">Liens</a> </li>
+            <li> <a href="#">Témoignages</a> </li>
+            <li> <a href="#">Références</a> </li>
+          </ul>
+          <form class="navbar-form navbar-right inline-form">
+            <div class="form-group">
+              <input type="search" class="input-sm form-control" placeholder="Recherche">
+              <button type="submit" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-eye-open"></span> Chercher</button>
+            </div>
+          </form>
+        </div>
+      </nav>
+      </div>
+                <h2>Responsable WebMarketing</h2>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="col-xs-4">
+            <div class="container-fluid">
+                <ul><h3>Parcours avant la formation Simplonline</h3>
+                <p>Jeune Auto-entrepreneur, Autodidacte Indépendant en WebMarketing, CopyWritting, Community et SEO ainsi que Création et Optimisation Web axée Économie Verte et Sociale, Collaborative et Participative, Citoyenne. Domaine de Compétences très large.</p>
+            </ul>
+            </div>
+        </div>
+        
+        <div class="col-xs-4">
+            <div class="container-fluid">
+                <ul><h3>Mes ambitions</h3>
+                <p>Devenir WebMarketeur : ACCÉLÉRATEUR, FACILITATEUR ET OPTIMISATEUR DE PROJETS, D'INITIATIVES ET D'ALTERNATIVES.</p>
+            </ul>
+            </div>
+        </div>
+        <div class="col-xs-4">
+            <div class="container-fluid">
+                <ul><h3>Expérience professionnelle</h3>
+                    <li>BAC STG "Option Gestion et Comptabilité" > Gestion Financière - Diplôme obtenu avec Mention.</li>
+                    <li>Formation Autodidacte en WebMarketing ( Création et Optimisation ) - Apprentissage et Invention de Stratégies WebMarketing.
+Mise en place de Plans d'Action. Création de A à Z et mise en ligne de Sites Internet. Monétisation. Optimisation des Résultats.
+Innovation et Evolution. Accompagnement et Suivi.</li>
+                    <li>Auto-Entrepreneur (Agence des Publicités / WebMarketing) - Entreprise Personnelle</li>
+                </ul>
+            </div>
+        </div>
+    </main>
+    
+    <footer>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2595.927073597476!2d5.229862315693997!3d49.410284779345425!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47eaf7587b9a6a3b%3A0x1e1e3d02a5441937!2s4+Rue+Montant+%C3%80+la+Sass%C3%A9e%2C+55110+Lion-Devant-Dun!5e0!3m2!1sfr!2sfr!4v1450081885976" frameborder="0" style="border:0" allowfullscreen></iframe>
+        <p>Mes coordonnées : 0684661158 / boris.puyet@nordnet.fr</p>
+    </footer>
+
+</body>
+</html>
